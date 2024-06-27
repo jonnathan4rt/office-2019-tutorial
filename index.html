@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynx Tutoriales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0078D4;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            color: #ffffff;
+        }
+        h2, h3 {
+            color: #0078D4;
+        }
+        p, pre {
+            line-height: 1.6;
+        }
+        a {
+            color: #0078D4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #0078D4;
+            overflow-x: auto;
+        }
+        .important {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-left: 5px solid #ffeeba;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lynx Tutoriales</h1>
+    </header>
+    <main>
+        <h2>Descargar e Instalar Office 2019</h2>
+        
+        <p>📥 Primero, necesitamos descargar la herramienta de implementación de Office. Puedes hacerlo desde el Centro de Descarga de Microsoft en el siguiente enlace:</p>
+        <p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">Descargar Herramienta de Implementación de Office</a></p>
+
+        <h3>Preparando la Carpeta de Office 2019</h3>
+        <ol>
+            <li>Crea una carpeta llamada <strong>Office 2019</strong> en una ubicación de tu elección.</li>
+            <li>📁 Abre el archivo descargado con doble clic, acepta la licencia, y selecciona la carpeta <strong>Office 2019</strong> que acabas de crear.</li>
+            <li>Una vez descomprimido, encontrarás varios archivos en la carpeta <strong>Office 2019</strong>. Borra todos los archivos excepto el <code>configuration-Office2019Enterprise</code>.</li>
+            <li>Cambia el nombre del archivo de <code>configuration-Office2019Enterprise</code> a <code>configuration</code>.</li>
+        </ol>
+
+        <h3>Modificando el Archivo de Configuración</h3>
+        <ol>
+            <li>Haz clic derecho en el archivo <code>configuration</code> y selecciona <strong>Abrir con</strong> ➡️ <strong>Bloc de notas</strong>.</li>
+            <li>Verás una configuración en inglés como esta:</li>
+        </ol>
+
+        <pre><code>&lt;Add OfficeClientEdition="64" Channel="PerpetualVL2019"&gt;
+    &lt;Product ID="ProPlus2019Volume"&gt;
+      &lt;Language ID="en-us" /&gt;
+    &lt;/Product&gt;
+    &lt;Product ID="VisioPro2019Volume"&gt;
+      &lt;Language ID="en-us" /&gt;
+    &lt;/Product&gt;
+    &lt;Product ID="ProjectPro2019Volume"&gt;
+      &lt;Language ID="en-us" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;</code></pre>
+
+        <ol start="3">
+            <li>Para instalar Office en español, reemplaza <code>en-us</code> con <code>es-es</code> en todos los campos <code>Language ID</code>. El archivo quedará así:</li>
+        </ol>
+
+        <pre><code>&lt;Add OfficeClientEdition="64" Channel="PerpetualVL2019"&gt;
+    &lt;Product ID="ProPlus2019Volume"&gt;
+      &lt;Language ID="es-es" /&gt;
+    &lt;/Product&gt;
+    &lt;Product ID="VisioPro2019Volume"&gt;
+      &lt;Language ID="es-es" /&gt;
+    &lt;/Product&gt;
+    &lt;Product ID="ProjectPro2019Volume"&gt;
+      &lt;Language ID="es-es" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;</code></pre>
+
+        <ol start="4">
+            <li>Guarda los cambios en el Bloc de notas.</li>
+        </ol>
+
+        <h3>Instalación de Office</h3>
+        <p>📂 Abre el <strong>Símbolo del Sistema (CMD)</strong> y navega a la carpeta donde guardaste los archivos de Office 2019. Ejemplo:</p>
+        <pre><code>cd C:\Users\Artic\Desktop\Office 2019</code></pre>
+
+        <p>🔗 Entra en <a href="https://learn.microsoft.com/es-es/deployoffice/ltsc2021/deploy" target="_blank">Documentación de Microsoft</a> y desplázate hasta la sección <strong>Instalación de Office LTSC 2021 mediante la herramienta de implementación de Office</strong>.</p>
+
+        <p>🔧 Busca el comando <code>setup /configure configuration.xml</code> y ejecútalo en CMD:</p>
+        <pre><code>setup /configure configuration.xml</code></pre>
+
+        <div class="important">
+            ⚠️ <strong>Importante:</strong> Si este comando da error, borra <code>.xml</code> y prueba con:
+            <pre><code>setup /configure configuration</code></pre>
+        </div>
+
+        <p>¡Y listo! 🎉 Tu Office 2019 debería comenzar a instalarse.</p>
+    </main>
+</body>
+</html>
